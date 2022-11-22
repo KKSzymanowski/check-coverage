@@ -1,0 +1,42 @@
+{
+  "name": "check-coverage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action which checks coverage and adds a new Check",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint '**/*.ts'",
+    "pack": "ncc build -m",
+    "format": "prettier --write '**/*.js' '**/*.ts'",
+    "all": "npm run build && npm run lint && npm run pack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkszymanowski/check-coverage.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "checks"
+  ],
+  "author": "Kuba Szymanowski",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@octokit/rest": "^19.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}

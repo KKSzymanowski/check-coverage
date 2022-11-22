@@ -1,0 +1,25 @@
+name: 'Check Coverage'
+description: 'Check coverage and add a new Check'
+author: 'Kuba Szymanowski'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+inputs:
+  sha:
+    description: 'the target commit''s SHA (defaults to the current commit)'
+    required: false
+  token:
+    description: 'your GITHUB_TOKEN'
+    required: true
+  minimum-coverage:
+    description: 'minimum expected coverage as float'
+    required: true
+  current-coverage:
+    description: 'current coverage as float'
+    required: true
+outputs:
+  check_id:
+    description: 'the ID of the created check, useful to update it in another action'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
